@@ -1,0 +1,7 @@
+package com.mime.minefront;
+
+public class Display {
+	
+	int WIDTH = 800;
+	
+}
