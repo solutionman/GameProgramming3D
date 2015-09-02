@@ -1,3 +1,4 @@
 activeuserprofiles=LOM;Team
 eclipse.preferences.version=1
 org.eclipse.rse.systemtype.local.systemType.defaultUserId=Dima
+useridperkey=LOM.Local\=Dima;

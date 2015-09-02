@@ -19,6 +19,7 @@ public class Display extends Canvas implements Runnable {
 		thread = new Thread(this);
 		thread.start();
 		
+		System.out.println("Working!");
 	}
 	
 	private void stop() {
@@ -26,7 +27,7 @@ public class Display extends Canvas implements Runnable {
 			return;
 		running = false;
 		try {
-			thread.join();
+		thread.join();
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.exit(0);
