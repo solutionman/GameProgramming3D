@@ -16,8 +16,6 @@ public class Render {
 			int yPix = yOffset;
 			for (int x = 0; x < render.width; x++) {
 				int xPix = xOffset;
-				
-				pixels[xPix + yPix * width] = render.pixels[x + render.width];
 			}
 		}
 		
