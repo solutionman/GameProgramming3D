@@ -1,7 +1,6 @@
 package com.mime.minefront;
 
 import java.awt.Canvas;
-import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
@@ -68,17 +67,6 @@ public class Display extends Canvas implements Runnable {
 			createBufferStrategy(3);
 			return;
 		}
-		
-		screen.render();
-		
-		for (int i = 0; i < WIDTH * HEIGHT; i++) {
-			pixels[i] = screen.pixels[i];
-		}
-		
-		Graphics g = bs.getDrawGraphics();
-		g.drawImage(img, 0, 0, WIDTH, HEIGHT, null);
-		g.dispose();
-		bs.show();
 		
 	}
 

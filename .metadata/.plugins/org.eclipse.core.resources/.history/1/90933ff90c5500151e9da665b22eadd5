@@ -69,8 +69,6 @@ public class Display extends Canvas implements Runnable {
 			return;
 		}
 		
-		screen.render();
-		
 		for (int i = 0; i < WIDTH * HEIGHT; i++) {
 			pixels[i] = screen.pixels[i];
 		}
