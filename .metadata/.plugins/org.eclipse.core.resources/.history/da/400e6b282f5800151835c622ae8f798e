@@ -24,15 +24,11 @@ public class Render {
 			
 			for (int x = 0; x < render.width; x++) {
 				int xPix = x + xOffset;
-				if (xPix < 0 || xPix >= display.WIDTH) {
+				if (xPix < 0 || xPix >= 1280) {
 					continue;
 				}
 				
-				int alpha = render.pixels[x + y * render.width];
-				if (alpha > 0) {
-					pixels[xPix + yPix * width] = alpha;
-				}
-				
+				pixels[xPix + yPix * width] = render.pixels[x + y * render.width];
 			}
 		}
 		

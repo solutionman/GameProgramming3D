@@ -13,13 +13,14 @@ import com.mime.minefront.graphics.Screen;
 
 public class Display extends Canvas implements Runnable {
 
-	public static final int WIDTH = 800;
-	public static final int HEIGHT = 600;
+	public static final int WIDTH = 1280;
+	public static final int HEIGHT = 720;
 	public static final String TITLE = "Minefront Pre-Alpha 0.01";
 
 	private Thread thread;
 	private Screen screen;
 	private BufferedImage img;
+	//private Render render;
 	private boolean running = false;	
 	private int[] pixels;
 	
