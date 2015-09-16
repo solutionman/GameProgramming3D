@@ -30,7 +30,7 @@ public class Screen extends Render {
 		}
 		
 		render.floor();
-		draw(render, 0, 0);
+		draw(test, 0, 0);
 	}
 	
 }

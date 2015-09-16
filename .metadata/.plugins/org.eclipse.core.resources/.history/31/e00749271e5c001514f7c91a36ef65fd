@@ -16,6 +16,7 @@ public class Render3D extends Render {
 				depth *= z;
 				int xx = (int) (depth) & 5;
 				pixels[x + y * width] = xx * 128;
+				System.out.println(xx);
 				
 			}
 		}
