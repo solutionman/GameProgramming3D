@@ -8,17 +8,15 @@ public class Render3D extends Render {
 	
 	public void floor() {
 		for (int y = 0; y < height; y++) {
-			double ceiling = (y - height / 2.0) / height;
+			double ceiling = y - height / 2.4;
+			double z = 100.0 / ceiling;
 			
-			
-			double z = 8 / ceiling;			
 			for (int x = 0; x < width; x++) {
-				double depth = (x - width / 2.0) / height;
+				double depth = x - width / 2;
 				depth *= z;
-				int xx = (int) (depth) & 15;
-				int yy = (int) (z) & 15;
-				pixels[x + y * width] = (xx * 16) | (yy * 16) << 8;
-
+				int xx = (int) (depth) & 5;
+				pixels[x + y * width] = xx * 128;
+				
 			}
 		}
 	}

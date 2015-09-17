@@ -18,7 +18,8 @@ public class Render3D extends Render {
 				int xx = (int) (depth) & 15;
 				int yy = (int) (z) & 15;
 				pixels[x + y * width] = (xx * 16) | (yy * 16) << 8;
-
+				System.out.println(yy);
+				
 			}
 		}
 	}
