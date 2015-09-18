@@ -23,11 +23,9 @@ public class Render3D extends Render {
 			for (int x = 0; x < width; x++) {
 				double depth = (x - width / 2.0) / height;
 				depth *= z;
-				double xx = depth;
-				double yy = z + time;
-				int xPix = (int) (xx);
-				int yPix = (int) (yy);
-				pixels[x + y * width] = ((xPix & 15) * 16) | ((yPix & 15) * 16) << 8;
+				int xx = (int) (depth);
+				int yy = (int) (z + time) & 15;
+				pixels[x + y * width] = (xx & 15 * 16) | (yy & 15 * 16) << 8;
 
 			}
 		}
