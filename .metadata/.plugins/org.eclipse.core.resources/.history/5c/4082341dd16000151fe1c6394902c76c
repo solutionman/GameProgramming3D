@@ -8,13 +8,9 @@ public class Render3D extends Render {
 		super(width, height);
 	}
 	
+	//double time = 0;
 	
 	public void floor(Game game) {
-		
-		double rotation = game.time / 1000.0;
-		double cosine = Math.cos(rotation);
-		double sine = Math.sin(rotation);
-		
 		for (int y = 0; y < height; y++) {
 			double ceiling = (y - height / 2.0) / height;
 			
@@ -28,8 +24,8 @@ public class Render3D extends Render {
 			for (int x = 0; x < width; x++) {
 				double depth = (x - width / 2.0) / height;
 				depth *= z;
-				double xx = depth * cosine + z * sine;
-				double yy = z * cosine - depth * sine;
+				double xx = depth;
+				double yy = z;
 				int xPix = (int) (xx);
 				int yPix = (int) (yy);
 				pixels[x + y * width] = ((xPix & 15) * 16) | ((yPix & 15) * 16) << 8;

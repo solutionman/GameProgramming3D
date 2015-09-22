@@ -11,7 +11,7 @@ public class Render3D extends Render {
 	
 	public void floor(Game game) {
 		
-		double rotation = game.time / 1000.0;
+		double rotation = game.time / 100.0;
 		double cosine = Math.cos(rotation);
 		double sine = Math.sin(rotation);
 		
@@ -29,7 +29,7 @@ public class Render3D extends Render {
 				double depth = (x - width / 2.0) / height;
 				depth *= z;
 				double xx = depth * cosine + z * sine;
-				double yy = z * cosine - depth * sine;
+				double yy = z * cosine - depth;
 				int xPix = (int) (xx);
 				int yPix = (int) (yy);
 				pixels[x + y * width] = ((xPix & 15) * 16) | ((yPix & 15) * 16) << 8;

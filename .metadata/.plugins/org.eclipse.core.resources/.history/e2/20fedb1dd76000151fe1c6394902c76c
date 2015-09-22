@@ -11,7 +11,7 @@ public class Render3D extends Render {
 	
 	public void floor(Game game) {
 		
-		double rotation = game.time / 1000.0;
+		double rotation = game.time / 100.0;
 		double cosine = Math.cos(rotation);
 		double sine = Math.sin(rotation);
 		
