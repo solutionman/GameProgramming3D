@@ -11,10 +11,8 @@ public class Render3D extends Render {
 	
 	public void floor(Game game) {
 		
-		double floorPosition = 8;
-		double ceilingPozition = 8;
-		double forward = game.time/5.0;
-		double right = game.time/5.0;
+		double floorPosition = 10;
+		double ceilingPozition = 10;
 		
 		double rotation = game.time / 100.0;
 		double cosine = Math.cos(rotation);
