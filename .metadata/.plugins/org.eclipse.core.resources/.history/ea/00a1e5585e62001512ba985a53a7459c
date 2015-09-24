@@ -38,10 +38,6 @@ public class Display extends Canvas implements Runnable {
 		pixels = ((DataBufferInt)img.getRaster().getDataBuffer()).getData();
 		
 		input = new InputHandler();
-		addKeyListener(input);
-		addFocusListener(input);
-		addMouseListener(input);
-		addMouseMotionListener(input);
 		
 	}
 
@@ -101,7 +97,7 @@ public class Display extends Canvas implements Runnable {
 	}
 	
 	private void tick() {
-		game.tick(input.key);
+		game.tick();
 	}
 	
 	private void render() {

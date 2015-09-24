@@ -14,10 +14,10 @@ public class Game {
 		time++;
 		boolean forward = key[KeyEvent.VK_W];
 		boolean back = key[KeyEvent.VK_S];
-		boolean left = key[KeyEvent.VK_A];
-		boolean right = key[KeyEvent.VK_D];
-		boolean turnLeft = key[KeyEvent.VK_LEFT];
-		boolean turnRight = key[KeyEvent.VK_RIGHT];
+		boolean left = key[KeyEvent.VK_W];
+		boolean right = key[KeyEvent.VK_W];
+		boolean turnLeft = key[KeyEvent.VK_W];
+		boolean turnRight = key[KeyEvent.VK_W];
 	}
 	
 }
