@@ -27,11 +27,11 @@ public class Controller {
 		}
 		
 		if (turnLeft) {
-			rotationa += rotationSpeed;
+			zMove++;
 		}
 		
 		if (turnRight) {
-			rotationa -= rotationSpeed;
+			zMove++;
 		}
 		
 		xa += (xMove * Math.cos(rotation) + zMove * Math.sin(rotation)) * walkSpeed;
