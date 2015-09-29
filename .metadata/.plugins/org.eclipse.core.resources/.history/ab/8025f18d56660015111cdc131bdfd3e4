@@ -1,0 +1,5 @@
+package com.mime.minefront.input;
+
+public class InputHandlerImpl extends InputHandler {
+
+}
