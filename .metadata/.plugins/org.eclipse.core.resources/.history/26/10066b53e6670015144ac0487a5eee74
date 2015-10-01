@@ -41,7 +41,7 @@ public class Controller {
 		z += za;
 		xa *= 0.1;
 		za *= 0.1;
-		rotation += rotationa;
+		rotation += rotation;
 		rotationa *= 0.5;
 	}
 	

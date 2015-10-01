@@ -63,9 +63,7 @@ public class InputHandler implements KeyListener, FocusListener, MouseListener, 
 	@Override
 	public void focusLost(FocusEvent e) {
 		
-		for (int i = 0; i < key.length; i++) {
-			key[i] = false;
-		}
+		//System.out.println("keyCode=" + e);
 		
 	}
 

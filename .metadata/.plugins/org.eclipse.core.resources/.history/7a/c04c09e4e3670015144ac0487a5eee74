@@ -35,13 +35,13 @@ public class Controller {
 		}
 		
 		xa += (xMove * Math.cos(rotation) + zMove * Math.sin(rotation)) * walkSpeed;
-		za += (zMove * Math.cos(rotation) - xMove * Math.sin(rotation)) * walkSpeed;
+		za += (zMove * Math.cos(rotation) + xMove * Math.sin(rotation)) * walkSpeed;
 		
 		x += xa;
 		z += za;
 		xa *= 0.1;
 		za *= 0.1;
-		rotation += rotationa;
+		rotation += rotation;
 		rotationa *= 0.5;
 	}
 	
