@@ -5,7 +5,7 @@ import com.mime.minefront.Game;
 public class Render3D extends Render {
 	
 	public double[] zBuffer;
-	private double renderDistance = 5000;
+	private double renderDistance = 1000;
 
 	public Render3D(int width, int height) {
 		super(width, height);
@@ -43,10 +43,10 @@ public class Render3D extends Render {
 				double yy = z * cosine - depth * sine;
 				int xPix = (int) (xx + right);
 				int yPix = (int) (yy + forward);
-				zBuffer[x + y * width] = z;
+				zBuffer[width * height] = z;
 				pixels[x + y * width] = ((xPix & 15) * 16) | ((yPix & 15) * 16) << 8;
 				
-				if (z > 500) {
+				if (z > 200) {
 					pixels[x + y * width] = 0;
 				}
 				
