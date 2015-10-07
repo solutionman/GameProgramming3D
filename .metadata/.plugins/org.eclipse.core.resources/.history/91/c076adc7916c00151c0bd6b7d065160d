@@ -105,12 +105,8 @@ public class Display extends Canvas implements Runnable {
 				System.out.println("Right!!!");
 			}
 			if (newX < oldX) {
-				System.out.println("Left!!!");
+				
 			}
-			if (newX == oldX) {
-				System.out.println("Still!!!");
-			}
-			oldX = newX;
 			
 		}		
 	}

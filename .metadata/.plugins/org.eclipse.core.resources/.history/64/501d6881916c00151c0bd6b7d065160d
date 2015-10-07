@@ -27,7 +27,7 @@ public class Display extends Canvas implements Runnable {
 	private int[] pixels;
 	private InputHandler input;
 	private int newX = 0;
-	private int oldX = 0;
+	private int newY = 0;
 	
 	public Display() {
 		Dimension size = new Dimension(WIDTH, HEIGHT);
@@ -101,16 +101,6 @@ public class Display extends Canvas implements Runnable {
 			frames++;
 			
 			newX = InputHandler.MouseX;
-			if (newX > oldX) {
-				System.out.println("Right!!!");
-			}
-			if (newX < oldX) {
-				System.out.println("Left!!!");
-			}
-			if (newX == oldX) {
-				System.out.println("Still!!!");
-			}
-			oldX = newX;
 			
 		}		
 	}
