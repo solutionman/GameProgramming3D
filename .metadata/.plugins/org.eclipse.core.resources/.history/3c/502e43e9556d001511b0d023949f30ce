@@ -1,11 +1,8 @@
 package com.mime.minefront;
 
 import java.awt.Canvas;
-import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.Point;
-import java.awt.Toolkit;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
@@ -14,7 +11,6 @@ import javax.swing.JFrame;
 
 import com.mime.minefront.graphics.Render;
 import com.mime.minefront.graphics.Screen;
-import com.mime.minefront.input.Controller;
 import com.mime.minefront.input.InputHandler;
 
 public class Display extends Canvas implements Runnable {
@@ -107,16 +103,12 @@ public class Display extends Canvas implements Runnable {
 			newX = InputHandler.MouseX;
 			if (newX > oldX) {
 				System.out.println("Right!!!");
-				Controller.turnRight = true;
 			}
 			if (newX < oldX) {
 				System.out.println("Left!!!");
-				Controller.turnLeft = true;
 			}
 			if (newX == oldX) {
 				System.out.println("Still!!!");
-				Controller.turnLeft = false;
-				Controller.turnRight = false;
 			}
 			oldX = newX;
 			
@@ -148,13 +140,10 @@ public class Display extends Canvas implements Runnable {
 	}
 
 	public static void main(String[] args) {
-		BufferedImage cursor = new BufferedImage(16, 16, BufferedImage.TYPE_INT_ARGB);
-		Cursor blank = Toolkit.getDefaultToolkit().createCustomCursor(cursor, new Point(0,0), "blank");
 		Display game = new Display();
 		JFrame frame = new JFrame();
 		frame.add(game);
 		frame.pack();
-		frame.getContentPane().setCursor(blank);
 		frame.setTitle(TITLE);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//frame.setSize(WIDTH, HEIGHT);
@@ -168,7 +157,3 @@ public class Display extends Canvas implements Runnable {
 	}
 
 }
-
-
-
-
