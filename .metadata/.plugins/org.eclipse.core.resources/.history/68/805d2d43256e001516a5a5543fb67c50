@@ -34,7 +34,7 @@ public class Display extends Canvas implements Runnable {
 	private InputHandler input;
 	private int newX = 0;
 	private int oldX = 0;
-	private int fps;
+	private String fps;
 	
 	public Display() {
 		Dimension size = new Dimension(WIDTH, HEIGHT);
@@ -148,7 +148,7 @@ public class Display extends Canvas implements Runnable {
 		g.drawImage(img, 0, 0, WIDTH + 10, HEIGHT + 10, null);
 		g.setFont(new Font("Verdana", 2, 50));
 		g.setColor(Color.YELLOW);
-		g.drawString(fps + " FPS", 20, 50);
+		g.drawString(fps, 20, 50);
 		g.dispose();
 		bs.show();
 		
