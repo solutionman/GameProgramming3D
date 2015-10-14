@@ -45,7 +45,7 @@ public class Controller {
 		za += (zMove * Math.cos(rotation) - xMove * Math.sin(rotation)) * walkSpeed;
 		
 		x += xa;
-		y *= 0.9;
+		y += 0.9;
 		z += za;
 		xa *= 0.1;
 		za *= 0.1;

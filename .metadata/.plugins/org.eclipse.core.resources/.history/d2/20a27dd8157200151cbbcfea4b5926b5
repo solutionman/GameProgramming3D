@@ -19,7 +19,6 @@ public class Render3D extends Render {
 		double ceilingPozition = 8;
 		double forward = game.controls.z;
 		double right = game.controls.x;
-		double up = game.controls.y;
 		
 		double rotation = game.controls.rotation;
 		double cosine = Math.cos(rotation);
@@ -28,10 +27,10 @@ public class Render3D extends Render {
 		for (int y = 0; y < height; y++) {
 			double ceiling = (y + -height / 2.0) / height;
 			
-			double z = (floorPosition + up) / ceiling;	
+			double z = floorPosition / ceiling;	
 			
 			if (ceiling < 0) {
-				z = (ceilingPozition - up) / - ceiling;
+				z = ceilingPozition / - ceiling;
 			}
 			
 			

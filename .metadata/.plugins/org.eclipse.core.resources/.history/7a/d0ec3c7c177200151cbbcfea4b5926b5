@@ -19,7 +19,7 @@ public class Render3D extends Render {
 		double ceilingPozition = 8;
 		double forward = game.controls.z;
 		double right = game.controls.x;
-		double up = game.controls.y;
+		double up = Math.sin(game.time / 10) * 2;
 		
 		double rotation = game.controls.rotation;
 		double cosine = Math.cos(rotation);
