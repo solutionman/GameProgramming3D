@@ -10,7 +10,7 @@ public class Controller {
 		double rotationSpeed = 0.025;
 		double walkSpeed = 1;
 		double jumpHeight = 0.5;
-		double crouchHeight = 0.3;
+		double crouchHeight = 0.8;
 		double xMove = 0;
 		double zMove = 0;
 		
