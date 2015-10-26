@@ -80,7 +80,7 @@ public class Render3D extends Render {
 		for (int i = 0; i < 20000; i++) {
 			double xx = random.nextDouble();
 			double yy = random.nextDouble();
-			double zz = 1.5 - forwardGlobal / 16;
+			double zz = 1.5 - forward / 16;
 			
 			int xPixel = (int) (xx / zz * height / 2 + width / 2);
 			int yPixel = (int) (yy / zz * height / 2 + height / 2);
@@ -91,7 +91,7 @@ public class Render3D extends Render {
 		for (int i = 0; i < 20000; i++) {
 			double xx = random.nextDouble() - 1;
 			double yy = random.nextDouble();
-			double zz = 1.5 - forwardGlobal / 16;
+			double zz = 1.5 - forward / 16;
 			
 			int xPixel = (int) (xx / zz * height / 2 + width / 2);
 			int yPixel = (int) (yy / zz * height / 2 + height / 2);
@@ -102,7 +102,7 @@ public class Render3D extends Render {
 		for (int i = 0; i < 20000; i++) {
 			double xx = random.nextDouble() - 1;
 			double yy = random.nextDouble() - 1;
-			double zz = 1.5 - forwardGlobal / 16;
+			double zz = 1.5 - forward / 16;
 			
 			int xPixel = (int) (xx / zz * height / 2 + width / 2);
 			int yPixel = (int) (yy / zz * height / 2 + height / 2);
@@ -113,7 +113,7 @@ public class Render3D extends Render {
 		for (int i = 0; i < 20000; i++) {
 			double xx = random.nextDouble();
 			double yy = random.nextDouble() - 1;
-			double zz = 1.5 - forwardGlobal / 16;
+			double zz = 1.5 - forward / 16;
 			
 			int xPixel = (int) (xx / zz * height / 2 + width / 2);
 			int yPixel = (int) (yy / zz * height / 2 + height / 2);
@@ -124,7 +124,7 @@ public class Render3D extends Render {
 		for (int i = 0; i < 20000; i++) {
 			double xx = random.nextDouble();
 			double yy = random.nextDouble();
-			double zz = 2 - forwardGlobal / 16;
+			double zz = 2 - forward / 16;
 			
 			int xPixel = (int) (xx / zz * height / 2 + width / 2);
 			int yPixel = (int) (yy / zz * height / 2 + height / 2);
@@ -135,7 +135,7 @@ public class Render3D extends Render {
 		for (int i = 0; i < 20000; i++) {
 			double xx = random.nextDouble() - 1;
 			double yy = random.nextDouble();
-			double zz = 2 - forwardGlobal / 16;
+			double zz = 2 - forward / 16;
 			
 			int xPixel = (int) (xx / zz * height / 2 + width / 2);
 			int yPixel = (int) (yy / zz * height / 2 + height / 2);
@@ -146,7 +146,7 @@ public class Render3D extends Render {
 		for (int i = 0; i < 20000; i++) {
 			double xx = random.nextDouble() - 1;
 			double yy = random.nextDouble() - 1;
-			double zz = 2 - forwardGlobal / 16;
+			double zz = 2 - forward / 16;
 			
 			int xPixel = (int) (xx / zz * height / 2 + width / 2);
 			int yPixel = (int) (yy / zz * height / 2 + height / 2);
@@ -157,7 +157,7 @@ public class Render3D extends Render {
 		for (int i = 0; i < 20000; i++) {
 			double xx = random.nextDouble();
 			double yy = random.nextDouble() - 1;
-			double zz = 2 - forwardGlobal / 16;
+			double zz = 2 - forward / 16;
 			
 			int xPixel = (int) (xx / zz * height / 2 + width / 2);
 			int yPixel = (int) (yy / zz * height / 2 + height / 2);
