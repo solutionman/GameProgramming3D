@@ -22,7 +22,7 @@ public class Render3D extends Render {
 		
 		double floorPosition = 8;
 		double ceilingPozition = 8;
-		double forward = game.controls.z;
+		double forward = game.time % 100 / 20.0;
 		forwardGlobal = forward;
 		double right = game.controls.x;
 		double up = game.controls.y;
@@ -34,7 +34,7 @@ public class Render3D extends Render {
 			walking = Math.sin(game.time / 6.0) * 0.8;
 		}
 		
-		double rotation = game.controls.rotation;
+		double rotation = 0;//game.controls.rotation;
 		double cosine = Math.cos(rotation);
 		double sine = Math.sin(rotation);
 		
