@@ -32,7 +32,7 @@ public class Render3D extends Render {
 			walking = Math.sin(game.time / 6.0) * 0.8;
 		}
 		
-		double rotation = 0;//game.controls.rotation;
+		double rotation = Math.sin(game.time % 100.0 / 10);//game.controls.rotation;
 		double cosine = Math.cos(rotation);
 		double sine = Math.sin(rotation);
 		
@@ -70,21 +70,9 @@ public class Render3D extends Render {
 				
 			}
 		}
-		Random random = new Random(100);
-		for (int i = 0; i < 10000; i++) {
-			double xx = random.nextDouble();
-			double yy = random.nextDouble();
-			double zz = 1;
-			
-			int xPixel = (int) (xx / zz * height / 2 + width / 2);
-			int yPixel = (int) (yy / zz * height / 2 + height / 2);
-			if (xPixel >= 0 && yPixel >= 0 && xPixel < width && yPixel < height) {
-			pixels[xPixel + yPixel * width] = 0xffff;		
-			}
-		}
-
 		
 	}
+	
 	
 	public void renderDistanceLimiter() {
 		for (int i = 0; i < width * height; i++) {

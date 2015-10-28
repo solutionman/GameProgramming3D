@@ -111,15 +111,12 @@ public class Display extends Canvas implements Runnable {
 			
 			newX = InputHandler.MouseX;
 			if (newX > oldX) {
-				System.out.println("Right!!!");
 				Controller.turnRight = true;
 			}
 			if (newX < oldX) {
-				System.out.println("Left!!!");
 				Controller.turnLeft = true;
 			}
 			if (newX == oldX) {
-				System.out.println("Still!!!");
 				Controller.turnLeft = false;
 				Controller.turnRight = false;
 			}
@@ -162,7 +159,7 @@ public class Display extends Canvas implements Runnable {
 		JFrame frame = new JFrame();
 		frame.add(game);
 		frame.pack();
-		frame.getContentPane().setCursor(blank);
+		//frame.getContentPane().setCursor(blank);
 		frame.setTitle(TITLE);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);

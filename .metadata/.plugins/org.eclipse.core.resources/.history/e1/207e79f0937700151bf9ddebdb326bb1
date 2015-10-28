@@ -1,7 +1,0 @@
-package com.mime.minefront;
-
-import java.applet.Applet;
-
-public class MinefrontApplet extends Applet {
-	
-}

@@ -54,7 +54,7 @@ public class Display extends Canvas implements Runnable {
 		
 	}
 
-	public void start() {
+	public synchronized void start() {
 		if (running)
 			return;
 		running = true;
@@ -63,7 +63,7 @@ public class Display extends Canvas implements Runnable {
 		
 	}
 	
-	private void stop() {
+	public synchronized void stop() {
 		if (!running)
 			return;
 		running = false;
@@ -162,10 +162,9 @@ public class Display extends Canvas implements Runnable {
 		JFrame frame = new JFrame();
 		frame.add(game);
 		frame.pack();
-		frame.getContentPane().setCursor(blank);
+		//frame.getContentPane().setCursor(blank);
 		frame.setTitle(TITLE);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//frame.setSize(WIDTH, HEIGHT);
 		frame.setLocationRelativeTo(null);
 		frame.setResizable(true);
 		frame.setVisible(true);
