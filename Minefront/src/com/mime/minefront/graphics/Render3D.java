@@ -9,7 +9,7 @@ public class Render3D extends Render {
 	
 	public double[] zBuffer;
 	private double renderDistance = 5000;
-	private double forward, right, cosine, sine;
+	private double forward, right, up, cosine, sine;
 
 
 	public Render3D(int width, int height) {
@@ -24,7 +24,7 @@ public class Render3D extends Render {
 		double ceilingPozition = 8;
 		forward = game.controls.z;
 		right = game.controls.x;
-		double up = game.controls.y;
+		up = game.controls.y;
 		double walking = Math.sin(game.time / 6.0) * 0.5;
 		if (Controller.crouchWalk) {
 			walking = Math.sin(game.time / 6.0) * 0.25;
@@ -76,6 +76,30 @@ public class Render3D extends Render {
 	
 	public void renderWall(double xLeft, double xRight, double zDistance, double yHeight) {
 		double xcLeft = ((xLeft) - right) * 2;
+		double zcLeft = ((zDistance) - forward) * 2;
+		
+		double rotLeftSideX = xcLeft * cosine - zcLeft * sine;
+		double yCornerTL = ((-yHeight) - up) * 2;
+		double yCornerBL = ((+0.5 - yHeight) - up) * 2;
+		double rotLeftSideZ = zcLeft * cosine + xcLeft * sine;
+		
+		double xcRight = ((xRight) - right) * 2;
+		double zcRight = ((zDistance) - forward) * 2;
+		
+		double rotRightSideX = xcRight * cosine - zcRight * sine;
+		double yCornerTR = ((-yHeight) - up) * 2;
+		double yCornerBR = ((+0.5 - yHeight) - up) * 2;
+		double rotRightSideZ = zcRight * cosine + xcRight * sine;
+		
+		double xPixelLeft = (rotLeftSideX / rotLeftSideZ * height + width / 2);
+		double xPixelRight = (rotRightSideX / rotRightSideZ * height + width / 2);
+		
+		if (xPixelLeft >= xPixelRight) {
+			return;
+		}
+		
+		int xPixelLeftInt = (int)(xPixelLeft);
+		int xPixelRightInt = (int)(xPixelRight);
 		
 	}
 	

@@ -9,6 +9,7 @@ public class Render3D extends Render {
 	
 	public double[] zBuffer;
 	private double renderDistance = 5000;
+	private double forward, right, cosine, sine;
 
 
 	public Render3D(int width, int height) {
@@ -21,8 +22,8 @@ public class Render3D extends Render {
 		
 		double floorPosition = 8;
 		double ceilingPozition = 8;
-		double forward = game.time / 100.0;
-		double right = game.controls.x;
+		forward = game.controls.z;
+		right = game.controls.x;
 		double up = game.controls.y;
 		double walking = Math.sin(game.time / 6.0) * 0.5;
 		if (Controller.crouchWalk) {
@@ -32,9 +33,9 @@ public class Render3D extends Render {
 			walking = Math.sin(game.time / 6.0) * 0.8;
 		}
 		
-		double rotation = 0;//game.controls.rotation;
-		double cosine = Math.cos(rotation);
-		double sine = Math.sin(rotation);
+		double rotation = 0;//Math.sin(game.time % 1000.0 / 80);//game.controls.rotation;
+		cosine = Math.cos(rotation);
+		sine = Math.sin(rotation);
 		
 		for (int y = 0; y < height; y++) {
 			double ceiling = (y + -height / 2.0) / height;
@@ -70,19 +71,11 @@ public class Render3D extends Render {
 				
 			}
 		}
-		Random random = new Random(100);
-		for (int i = 0; i < 10000; i++) {
-			double xx = random.nextDouble();
-			double yy = random.nextDouble();
-			double zz = 2;
-			
-			int xPixel = (int) (xx / zz * height / 2 + width / 2);
-			int yPixel = (int) (yy / zz * height / 2 + height / 2);
-			if (xPixel >= 0 && yPixel >= 0 && xPixel < width && yPixel < height) {
-			pixels[xPixel + yPixel * width] = 0xffff;		
-			}
-		}
-
+		
+	}
+	
+	public void renderWall(double xLeft, double xRight, double zDistance, double yHeight) {
+		double xcLeft = ((xLeft) - right) * 2;
 		
 	}
 	
