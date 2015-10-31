@@ -33,7 +33,7 @@ public class Render3D extends Render {
 			walking = Math.sin(game.time / 6.0) * 0.8;
 		}
 		
-		double rotation = Math.sin(game.time / 40.0) * 0.5;//game.controls.rotation;
+		double rotation = 0;//Math.sin(game.time % 1000.0 / 80);//game.controls.rotation;
 		cosine = Math.cos(rotation);
 		sine = Math.sin(rotation);
 		
@@ -121,19 +121,6 @@ public class Render3D extends Render {
 			
 			int yPixelTopInt = (int) (yPixelTop);
 			int yPixelBottomInt = (int) (yPixelBottom);
-			
-			if (yPixelTopInt < 0) {
-				yPixelTopInt = 0;
-			}
-			if (yPixelTopInt > height) {
-				yPixelTopInt = height;
-			}
-			
-			for (int y = yPixelTopInt; y < yPixelBottomInt; y++) {
-				pixels[x + y * width] = 0x99DAF0;
-				zBuffer[x + y * width] = 0;
-			}
-			
 		}
 		
 	}
