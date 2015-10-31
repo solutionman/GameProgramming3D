@@ -104,14 +104,14 @@ public class Render3D extends Render {
 		if(xPixelLeftInt < 0) {
 			xPixelLeftInt = 0;
 		}
-		if(xPixelRight > width) {
-			xPixelRight = width;
+		if(xPixelRightInt > width) {
+			xPixelRightInt = width;
 		}
 		
 		double yPixelLeftTop = (int) (yCornerTL / rotLeftSideZ * height + height / 2);
-		double yPixelLeftBottom = (int) (yCornerBL / rotLeftSideZ * height + height / 2);
-		double yPixelRightTop = (int) (yCornerTR / rotRightSideZ * height + height / 2);
-		double yPixelRightBottom = (int) (yCornerBR / rotRightSideZ * height + height / 2);
+		double yPixelLeftBottom = yCornerBL / rotLeftSideZ * height + height / 2;
+		double yPixelRightTop = yCornerTR / rotRightSideZ * height + height / 2;
+		double yPixelRightBottom = yCornerBR / rotRightSideZ * height + height / 2;
 		
 		for (int x = xPixelLeftInt; x < xPixelRightInt; x++) {
 			double pixelRotation = (x - xPixelLeft) / (xPixelRight - xPixelLeft);
@@ -125,12 +125,13 @@ public class Render3D extends Render {
 			if (yPixelTopInt < 0) {
 				yPixelTopInt = 0;
 			}
-			if (yPixelTopInt > height) {
-				yPixelTopInt = height;
+			if (yPixelBottomInt > height) {
+				yPixelBottomInt = height;
 			}
 			
 			for (int y = yPixelTopInt; y < yPixelBottomInt; y++) {
-				pixels[x + y * width] = 0x99DAF0;
+				
+				pixels[x + y * width] = 0x99DAF0;					
 				zBuffer[x + y * width] = 0;
 			}
 			
