@@ -12,7 +12,7 @@ public class Controller {
 	public static boolean runWalk = false;
 	
 	public void tick(boolean forward, boolean back, boolean left, boolean right, boolean jump, boolean crouch, boolean run) {
-		double rotationSpeed = 0.025; //0.002 * Display.MouseSpeed;  // I don't like the behavior of mouse, so I commented it
+		double rotationSpeed = 0.004; //0.002 * Display.MouseSpeed;  // I don't like the behavior of mouse, so I commented it
 		double walkSpeed = 0.5;
 		double jumpHeight = 0.5;
 		double crouchHeight = 0.3;

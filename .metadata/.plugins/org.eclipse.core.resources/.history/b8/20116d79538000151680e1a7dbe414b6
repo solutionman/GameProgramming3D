@@ -36,7 +36,7 @@ public class Display extends Canvas implements Runnable {
 	private int oldX = 0;
 	private int fps;
 	
-	public static double MouseSpeed;
+	public static int MouseSpeed;
 	
 	public Display() {
 		Dimension size = new Dimension(WIDTH, HEIGHT);

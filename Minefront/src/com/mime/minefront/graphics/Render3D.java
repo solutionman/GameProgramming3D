@@ -65,7 +65,7 @@ public class Render3D extends Render {
 				int xPix = (int) (xx + right);
 				int yPix = (int) (yy + forward);
 				zBuffer[x + y * width] = z;
-				pixels[x + y * width] = Texture.floor.pixels[(xPix & 7) + (yPix & 7) * 8];
+				pixels[x + y * width] = Texture.floor.pixels[(xPix & 7) + (yPix & 7) * 16];
 				
 				if (z > 500) {
 					pixels[x + y * width] = 0;
@@ -146,7 +146,8 @@ public class Render3D extends Render {
 			for (int y = yPixelTopInt; y < yPixelBottomInt; y++) {
 				double pixelRotationY = (y - yPixelTop) / (yPixelBottom - yPixelTop);
 				int yTexture = (int) (8 * pixelRotationY);
-				pixels[x + y * width] = xTexture * 100 + yTexture * 100 * 256;					
+				pixels[x + y * width] = Texture.floor.pixels[((xTexture & 7) + 8) + (yTexture & 7) * 16];
+				//pixels[x + y * width] = xTexture * 100 + yTexture * 100 * 256;					
 				zBuffer[x + y * width] = 1 / (tex1 + (tex2 - tex1) * pixelRotation) * 8;
 			}
 			

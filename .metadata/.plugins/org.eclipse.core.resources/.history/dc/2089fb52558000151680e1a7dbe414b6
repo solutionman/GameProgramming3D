@@ -122,7 +122,7 @@ public class Display extends Canvas implements Runnable {
 				Controller.turnLeft = false;
 				Controller.turnRight = false;
 			}
-			MouseSpeed = Math.abs(newX - oldX);
+			MouseSpeed = newX - oldX;
 			oldX = newX;
 			
 		}		
