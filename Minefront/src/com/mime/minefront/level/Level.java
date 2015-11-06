@@ -1,0 +1,22 @@
+package com.mime.minefront.level;
+
+public class Level {
+	public Block[] blocks;
+	public final int width;
+	public final int height;
+	
+	public Level(int width, int height) {
+		this.width = width;
+		this.height = height;	
+		blocks = new Block[width * height];
+		for (int y = 0; y < height; y++) {
+			
+		}
+	}
+	
+	public Block create(int x, int y) {
+		return blocks[x + y * width];
+		
+	}
+	
+}
