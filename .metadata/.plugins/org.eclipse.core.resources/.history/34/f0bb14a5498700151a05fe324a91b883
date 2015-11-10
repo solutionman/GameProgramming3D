@@ -4,6 +4,8 @@ import java.util.Random;
 
 import com.mime.minefront.Game;
 import com.mime.minefront.input.Controller;
+import com.mime.minefront.level.Block;
+import com.mime.minefront.level.Level;
 
 public class Render3D extends Render {
 	
@@ -74,13 +76,40 @@ public class Render3D extends Render {
 			}
 		}
 		
+		Level level = game.level;
+		int size = 5;
+		for (int xBlock = -size; xBlock <= size; xBlock++) {
+			for (int zBlock = - size; zBlock <= size; zBlock++) {
+				Block block = level.create(xBlock, zBlock);
+				Block east = level.create(xBlock + 1, zBlock);
+				Block south = level.create(xBlock, zBlock + 1);
+				
+				if (block.solid) {
+					if (!east.solid) {
+						renderWall(xBlock + 1, xBlock +1, zBlock, zBlock + 1, 0);
+					}
+					if (!south.solid) {
+						renderWall(xBlock + 1, xBlock, zBlock + 1, zBlock + 1, 0);
+					}
+				} else {
+					if (east.solid) {
+						renderWall(xBlock + 1, xBlock + 1, zBlock + 1, zBlock, 0);
+					}
+					if (south.solid) {
+						renderWall(xBlock, xBlock + 1, zBlock + 1, zBlock + 1, 0);
+					}
+				}
+				
+			}
+		}
+		
 	}
 	
 	public void renderWall(double xLeft, double xRight, double zDistanceLeft, double zDistanceRight, double yHeight) {
-		double upCorrect = 0.062;
-		double rightCorrect = 0.062;
-		double forwardCorrect = 0.062;
-		double walkCorrect = -0.062;
+		double upCorrect = 0.0625;
+		double rightCorrect = 0.0625;
+		double forwardCorrect = 0.0625;
+		double walkCorrect = -0.0625;
 		
 		double xcLeft = ((xLeft) - (right * rightCorrect)) * 2;
 		double zcLeft = ((zDistanceLeft) - (forward * forwardCorrect)) * 2;
@@ -105,10 +134,22 @@ public class Render3D extends Render {
 		double tex40 = 8;
 		double clip = 0.5;
 		
+		if (rotLeftSideZ < clip && rotRightSideZ < clip) {
+			return;
+		}
+		
 		if (rotLeftSideZ < clip) {
 			double clip0 = (clip - rotLeftSideZ) / (rotRightSideZ - rotLeftSideZ);
 			rotLeftSideZ = rotLeftSideZ + (rotRightSideZ - rotLeftSideZ) * clip0;
 			rotLeftSideX = rotLeftSideX + (rotRightSideX - rotLeftSideX) * clip0;
+			tex30 = tex30 + (tex40 - tex30) * clip0;
+		}
+		
+		if (rotRightSideZ < clip) {
+			double clip0 = (clip - rotLeftSideZ) / (rotRightSideZ - rotLeftSideZ);
+			rotRightSideZ = rotLeftSideZ + (rotRightSideZ - rotLeftSideZ) * clip0;
+			rotRightSideX = rotLeftSideX + (rotRightSideX - rotLeftSideX) * clip0;
+			tex40 = tex30 + (tex40 - tex30) * clip0;
 		}
 		
 		if (xPixelLeft >= xPixelRight) {

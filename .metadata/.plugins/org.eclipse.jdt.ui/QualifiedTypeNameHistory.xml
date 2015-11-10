@@ -22,4 +22,6 @@
 <fullyQualifiedTypeName name="java.awt.BorderLayout"/>
 <fullyQualifiedTypeName name="com.mime.minefront.Display"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="com.mime.minefront.level.Level"/>
+<fullyQualifiedTypeName name="com.mime.minefront.level.Block"/>
 </qualifiedTypeNameHistroy>

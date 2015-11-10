@@ -4,6 +4,7 @@ import java.util.Random;
 
 import com.mime.minefront.Game;
 import com.mime.minefront.input.Controller;
+import com.mime.minefront.level.Level;
 
 public class Render3D extends Render {
 	
@@ -73,14 +74,14 @@ public class Render3D extends Render {
 				
 			}
 		}
-		
+		Level level = game.level;
 	}
 	
 	public void renderWall(double xLeft, double xRight, double zDistanceLeft, double zDistanceRight, double yHeight) {
-		double upCorrect = 0.065;
-		double rightCorrect = 0.065;
-		double forwardCorrect = 0.065;
-		double walkCorrect = -0.065;
+		double upCorrect = 0.0625;
+		double rightCorrect = 0.0625;
+		double forwardCorrect = 0.0625;
+		double walkCorrect = -0.0625;
 		
 		double xcLeft = ((xLeft) - (right * rightCorrect)) * 2;
 		double zcLeft = ((zDistanceLeft) - (forward * forwardCorrect)) * 2;
