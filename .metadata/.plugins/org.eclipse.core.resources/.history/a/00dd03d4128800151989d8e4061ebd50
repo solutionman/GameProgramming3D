@@ -1,0 +1,26 @@
+package com.mime.minefront;
+
+import java.awt.Dimension;
+
+import javax.swing.JFrame;
+
+public class Launcher extends JFrame {
+	private static final long serialVersionUID = 1L;
+	
+	
+
+	public Launcher() {
+		setTitle("Minefront Launcher");
+		setSize(new Dimension(240, 320));
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setResizable(false);
+		setVisible(true);
+		
+	}
+	
+	private void drawButtons() {
+		
+	}
+	
+}

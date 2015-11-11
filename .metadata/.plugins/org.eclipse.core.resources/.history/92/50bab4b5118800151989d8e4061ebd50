@@ -1,0 +1,13 @@
+package com.mime.minefront;
+
+import javax.swing.JFrame;
+
+public class Launcher extends JFrame {
+	
+	public Launcher() {
+		
+		setTitle("Minefront Launcher");
+		
+	}
+	
+}

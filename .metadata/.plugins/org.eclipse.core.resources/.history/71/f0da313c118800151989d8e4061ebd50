@@ -1,0 +1,9 @@
+package com.mime.minefront;
+
+import javax.swing.JFrame;
+
+public class Launcher extends JFrame {
+	
+	
+	
+}
