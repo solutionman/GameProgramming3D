@@ -28,4 +28,8 @@
 <fullyQualifiedTypeName name="javax.swing.JButton"/>
 <fullyQualifiedTypeName name="java.awt.Rectangle"/>
 <fullyQualifiedTypeName name="javax.swing.UIManager"/>
+<fullyQualifiedTypeName name="com.mime.minefront.gui.Launcher"/>
+<fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+<fullyQualifiedTypeName name="java.awt.event.ActionEvent"/>
+<fullyQualifiedTypeName name="com.mime.minefront.RunGame"/>
 </qualifiedTypeNameHistroy>
