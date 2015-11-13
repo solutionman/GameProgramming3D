@@ -1,0 +1,7 @@
+package com.mime.minefront.gui;
+
+public class Options extends Launcher {
+	
+	
+	
+}

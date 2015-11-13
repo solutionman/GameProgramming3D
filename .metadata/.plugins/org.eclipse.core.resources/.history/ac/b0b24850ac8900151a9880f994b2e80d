@@ -157,7 +157,7 @@ public class Display extends Canvas implements Runnable {
 	}
 
 	public static void main(String[] args) {
-		new Launcher(0);
+		new Launcher();
 	}
 
 }
