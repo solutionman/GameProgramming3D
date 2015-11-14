@@ -15,14 +15,14 @@ import com.mime.minefront.RunGame;
 public class Launcher extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
-	private JPanel window = new JPanel();
+	protected JPanel window = new JPanel();
 	private JButton play, options, help, quit;
 	private Rectangle rplay, roptions, rhelp, rquit;
 	
 	private int width = 240;
 	private int height = 320;
-	private int button_width = 80;
-	private int button_height = 40;
+	protected int button_width = 80;
+	protected int button_height = 40;
 
 	public Launcher(int id) {
 		/*try {
@@ -74,6 +74,7 @@ public class Launcher extends JFrame {
 		});
 		options.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
+				dispose();
 				new Options();
 			}
 		});

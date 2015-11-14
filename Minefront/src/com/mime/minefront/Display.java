@@ -22,8 +22,9 @@ import com.mime.minefront.input.InputHandler;
 
 public class Display extends Canvas implements Runnable {
 
-	public static final int WIDTH = 800;
-	public static final int HEIGHT = 600;
+	public static int width = 800;
+	public static int height = 600;
+	
 	public static final String TITLE = "Minefront Pre-Alpha 0.02";
 
 	private Thread thread;
@@ -36,6 +37,7 @@ public class Display extends Canvas implements Runnable {
 	private int newX = 0;
 	private int oldX = 0;
 	private int fps;
+	public static int selection = 0;
 	
 	public static double MouseSpeed;
 	
@@ -44,9 +46,9 @@ public class Display extends Canvas implements Runnable {
 		setPreferredSize(size);
 		setMinimumSize(size);
 		setMaximumSize(size);
-		screen = new Screen(WIDTH, HEIGHT);
+		screen = new Screen(getGameWidth(), getGameHeight());
 		game = new Game();
-		img = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
+		img = new BufferedImage(getGameWidth(), getGameHeight(), BufferedImage.TYPE_INT_RGB);
 		pixels = ((DataBufferInt)img.getRaster().getDataBuffer()).getData();
 		
 		input = new InputHandler();
@@ -57,6 +59,33 @@ public class Display extends Canvas implements Runnable {
 		
 	}
 
+	
+	public static int getGameWidth() {
+		if (selection == 0) {
+			width = 640;
+		}
+		if (selection == 1 || selection == -1) {
+			width = 800;
+		}
+		if (selection == 2) {
+			width = 1024;
+		}
+		return width;
+	}
+	
+	public static int getGameHeight() {
+		if (selection == 0) {
+			height = 480;
+		}
+		if (selection == 1 || selection == -1) {
+			height = 600;
+		}
+		if (selection == 2) {
+			height = 768;
+		}
+		return height;
+	}
+	
 	public synchronized void start() {
 		if (running)
 			return;
@@ -142,12 +171,12 @@ public class Display extends Canvas implements Runnable {
 		
 		screen.render(game);
 		
-		for (int i = 0; i < WIDTH * HEIGHT; i++) {
+		for (int i = 0; i < getGameWidth() * getGameHeight(); i++) {
 			pixels[i] = screen.pixels[i];
 		}
 		
 		Graphics g = bs.getDrawGraphics();
-		g.drawImage(img, 0, 0, WIDTH + 10, HEIGHT + 10, null);
+		g.drawImage(img, 0, 0, getGameWidth() + 10, getGameHeight() + 10, null);
 		g.setFont(new Font("Verdana", 2, 50));
 		g.setColor(Color.YELLOW);
 		g.drawString(fps + " FPS", 20, 50);

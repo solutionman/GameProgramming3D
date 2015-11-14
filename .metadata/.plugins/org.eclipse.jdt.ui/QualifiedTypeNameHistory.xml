@@ -18,7 +18,6 @@
 <fullyQualifiedTypeName name="com.mime.minefront.input.Controller"/>
 <fullyQualifiedTypeName name="java.applet.Applet"/>
 <fullyQualifiedTypeName name="java.awt.BorderLayout"/>
-<fullyQualifiedTypeName name="com.mime.minefront.Display"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="com.mime.minefront.level.Level"/>
 <fullyQualifiedTypeName name="com.mime.minefront.level.Block"/>
@@ -28,8 +27,10 @@
 <fullyQualifiedTypeName name="java.awt.Rectangle"/>
 <fullyQualifiedTypeName name="javax.swing.UIManager"/>
 <fullyQualifiedTypeName name="com.mime.minefront.gui.Launcher"/>
-<fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
 <fullyQualifiedTypeName name="java.awt.event.ActionEvent"/>
 <fullyQualifiedTypeName name="com.mime.minefront.RunGame"/>
 <fullyQualifiedTypeName name="java.awt.Dimension"/>
+<fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+<fullyQualifiedTypeName name="java.awt.Choice"/>
+<fullyQualifiedTypeName name="com.mime.minefront.Display"/>
 </qualifiedTypeNameHistroy>
