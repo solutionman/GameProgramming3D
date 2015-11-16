@@ -33,4 +33,6 @@
 <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
 <fullyQualifiedTypeName name="java.awt.Choice"/>
 <fullyQualifiedTypeName name="com.mime.minefront.Display"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="com.mime.minefront.Configuration"/>
 </qualifiedTypeNameHistroy>

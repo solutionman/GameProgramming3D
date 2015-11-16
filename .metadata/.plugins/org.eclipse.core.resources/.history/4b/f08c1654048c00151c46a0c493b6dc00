@@ -1,0 +1,9 @@
+package com.mime.minefront;
+
+public class Configuration {
+	
+	public void saveConfiguration(String key, int value){
+		
+	}
+	
+}
