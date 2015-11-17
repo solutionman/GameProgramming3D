@@ -19,7 +19,6 @@ public class Configuration {
 			}
 			OutputStream write = new FileOutputStream(path);
 			properties.setProperty(key, Integer.toString(value));
-			properties.storeToXML(write, "Resolution");
 		} catch (Exception e) {
 		}
 	}

@@ -55,6 +55,7 @@ public class Launcher extends JFrame {
 		
 		options = new JButton("Options");
 		roptions = new Rectangle((width/2) - (button_width/2), 140, button_width, button_height);
+		config.saveConfiguration("sd", 1);
 		options.setBounds(roptions);
 		window.add(options);
 		

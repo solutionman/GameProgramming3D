@@ -45,7 +45,7 @@ public class Options extends Launcher {
 		
 		OK.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				int selection = resolution.getSelectedIndex();
+				int selection= resolution.getSelectedIndex();
 				int w = 0; 
 				int h = 0;
 				if (selection == 0) {
@@ -60,8 +60,7 @@ public class Options extends Launcher {
 					w = 1024;
 					h = 768;
 				}
-				config.saveConfiguration("width", w);
-				config.saveConfiguration("height", h);
+				config.saveConfiguration("width", w);				
 				dispose();
 				new Launcher(0);				
 			}

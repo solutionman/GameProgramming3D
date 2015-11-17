@@ -45,7 +45,7 @@ public class Options extends Launcher {
 		
 		OK.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				int selection = resolution.getSelectedIndex();
+				int selection= resolution.getSelectedIndex();
 				int w = 0; 
 				int h = 0;
 				if (selection == 0) {
