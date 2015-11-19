@@ -28,7 +28,7 @@ public class Configuration {
 		}
 	}
 	
-	public void loadConfiguration(String path) {
+	public void loadConfiguration(String path, String Key) {
 		try {
 			InputStream read = new FileInputStream(path);
 			properties.loadFromXML(read);

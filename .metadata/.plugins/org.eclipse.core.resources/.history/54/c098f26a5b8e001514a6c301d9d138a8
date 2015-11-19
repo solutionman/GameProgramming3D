@@ -70,7 +70,6 @@ public class Launcher extends JFrame {
 		
 		play.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				config.loadConfiguration("res/settings/config.xml");
 				dispose();
 				new RunGame();
 			}

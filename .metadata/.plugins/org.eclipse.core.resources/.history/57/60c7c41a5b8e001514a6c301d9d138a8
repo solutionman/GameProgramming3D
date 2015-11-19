@@ -28,13 +28,12 @@ public class Configuration {
 		}
 	}
 	
-	public void loadConfiguration(String path) {
+	public void loadConfiguration(String path, String Key) {
 		try {
 			InputStream read = new FileInputStream(path);
 			properties.loadFromXML(read);
 			String width = properties.getProperty("width");
 			String height = properties.getProperty("height");
-			System.out.println("Width = " + width + ", Height + " + height);
 		} catch (FileNotFoundException e) {
 			
 		} catch (IOException e1) {
