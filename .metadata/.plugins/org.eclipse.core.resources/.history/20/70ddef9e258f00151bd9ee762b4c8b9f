@@ -25,7 +25,6 @@ public class Configuration {
 			properties.setProperty(key, Integer.toString(value));
 			properties.storeToXML(write, "Resolution");
 		} catch (Exception e) {
-			e.printStackTrace();
 		}
 	}
 	
@@ -35,26 +34,17 @@ public class Configuration {
 			properties.loadFromXML(read);
 			String width = properties.getProperty("width");
 			String height = properties.getProperty("height");
-			setResolution(Integer.parseInt(width), Integer.parseInt(height));
-			read.close();
+			System.out.println("Width = " + width + ", Height + " + height);
 		} catch (FileNotFoundException e) {
-			saveConfiguration("width", 800);
-			saveConfiguration("height", 600);
-			loadConfiguration(path);
-		} catch (IOException e) {
-			e.printStackTrace();
+			
+		} catch (IOException e1) {
+			
 		}
 	}
 	
 	public void setResolution(int width, int height) {
 		if (width == 640 && height == 480){
-			Display.selection = 0;
-		}
-		if (width == 800 && height == 600){
-			Display.selection = 1;
-		}
-		if (width == 1024 && height == 768){
-			Display.selection = 2;
+			
 		}
 	} 
 	

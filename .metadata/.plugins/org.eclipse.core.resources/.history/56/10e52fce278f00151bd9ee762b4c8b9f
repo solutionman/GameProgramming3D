@@ -25,7 +25,6 @@ public class Configuration {
 			properties.setProperty(key, Integer.toString(value));
 			properties.storeToXML(write, "Resolution");
 		} catch (Exception e) {
-			e.printStackTrace();
 		}
 	}
 	
@@ -41,8 +40,8 @@ public class Configuration {
 			saveConfiguration("width", 800);
 			saveConfiguration("height", 600);
 			loadConfiguration(path);
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (IOException e1) {
+			
 		}
 	}
 	

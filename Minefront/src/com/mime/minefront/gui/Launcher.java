@@ -27,13 +27,14 @@ public class Launcher extends JFrame {
 	protected int button_height = 40;
 
 	public Launcher(int id) {
-		/*try {
+		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (Exception e) {
 			e.printStackTrace();
-		}*/    
+		}
 		// this code make button looks similar to buttons in system.  
 		//Commented it because it appears very slowly
+		// well, we added method repaint();  and it works now perfectly ))  
 		setTitle("Minefront Launcher");
 		setSize(new Dimension(width, height));
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -45,6 +46,7 @@ public class Launcher extends JFrame {
 		if (id == 0) {
 		drawButtons();
 		}
+		repaint();
 	}
 	
 	private void drawButtons() {

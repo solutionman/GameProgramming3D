@@ -2,6 +2,7 @@ package com.mime.minefront.gui;
 
 import java.awt.Dimension;
 import java.awt.Rectangle;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
@@ -9,24 +10,28 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
+import com.mime.minefront.Configuration;
+import com.mime.minefront.RunGame;
+
 public class Launcher extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
-	private JPanel window = new JPanel();
+	protected JPanel window = new JPanel();
 	private JButton play, options, help, quit;
 	private Rectangle rplay, roptions, rhelp, rquit;
+	Configuration config = new Configuration();
 	
 	private int width = 240;
 	private int height = 320;
-	private int button_width = 80;
-	private int button_height = 40;
+	protected int button_width = 80;
+	protected int button_height = 40;
 
-	public Launcher() {
-		/*try {
+	public Launcher(int id) {
+		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (Exception e) {
 			e.printStackTrace();
-		}*/    
+		}
 		// this code make button looks similar to buttons in system.  
 		//Commented it because it appears very slowly
 		setTitle("Minefront Launcher");
@@ -37,9 +42,10 @@ public class Launcher extends JFrame {
 		setResizable(false);
 		setVisible(true);
 		window.setLayout(null);
-		
+		if (id == 0) {
 		drawButtons();
-		
+		}
+		repaint();
 	}
 	
 	private void drawButtons() {
@@ -64,7 +70,27 @@ public class Launcher extends JFrame {
 		window.add(quit);
 		
 		play.addActionListener(new ActionListener(){
-			
+			public void actionPerformed(ActionEvent e) {
+				config.loadConfiguration("res/settings/config.xml");
+				dispose();
+				new RunGame();
+			}
+		});
+		options.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				new Options();
+			}
+		});
+		help.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Help");
+			}
+		});		
+		quit.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
 		});
 		
 	}
