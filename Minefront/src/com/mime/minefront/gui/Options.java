@@ -7,6 +7,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 import com.mime.minefront.Display;
 
@@ -17,6 +19,8 @@ public class Options extends Launcher {
 	private int width = 550;
 	private int height = 450;
 	private JButton OK;
+	private JTextField twidth, theight;
+	private JLabel lwidth, lheight;
 	private Rectangle rOK, rresolution;
 	private Choice resolution = new Choice();
 	
