@@ -49,7 +49,8 @@ public class Options extends Launcher {
 		window.add(resolution);
 		
 		lwidth = new JLabel("Width: ");
-		lwidth.setBounds(30, 150, 120, 20);
+		lwidth.setBounds(30, 150, 420, 420);
+		lwidth.setFont(new Font("Verdana", 2, 50));
 		window.add(lwidth);
 		
 		lheight = new JLabel("Height: ");

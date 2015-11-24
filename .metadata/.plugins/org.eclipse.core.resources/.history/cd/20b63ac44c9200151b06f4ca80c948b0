@@ -50,6 +50,7 @@ public class Options extends Launcher {
 		
 		lwidth = new JLabel("Width: ");
 		lwidth.setBounds(30, 150, 120, 20);
+		lwidth.setFont(new Font("Verdana", 2, 50));
 		window.add(lwidth);
 		
 		lheight = new JLabel("Height: ");
