@@ -95,23 +95,8 @@ public class Options extends Launcher {
 	}
 	
 	private int parseWidth(){
-		try {
 		int w = Integer.parseInt(twidth.getText());
 		return w;
-		} catch (NumberFormatException e){
-			drop();
-			return w;
-		}
-	}
-	
-	private int parseHeight(){
-		try {
-		int h = Integer.parseInt(theight.getText());
-		return h;
-		} catch (NumberFormatException e){
-			drop();
-			return h;
-		}
 	}
 }
 
