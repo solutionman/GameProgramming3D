@@ -47,8 +47,7 @@ public class Configuration {
 	}
 	
 	public void setResolution(int width, int height) {
-		Display.width = width;
-		Display.height = height;
+		
 	} 
 	
 }
