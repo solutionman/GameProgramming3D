@@ -24,7 +24,7 @@ public class Launcher extends JFrame {
 	Configuration config = new Configuration();
 	
 	private int width = 800;
-	private int height = 400;
+	private int height = 600;
 	protected int button_width = 80;
 	protected int button_height = 40;
 

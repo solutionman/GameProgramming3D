@@ -23,8 +23,8 @@ public class Launcher extends JFrame {
 	private Rectangle rplay, roptions, rhelp, rquit;
 	Configuration config = new Configuration();
 	
-	private int width = 800;
-	private int height = 400;
+	private int width = 240;
+	private int height = 320;
 	protected int button_width = 80;
 	protected int button_height = 40;
 
@@ -37,7 +37,6 @@ public class Launcher extends JFrame {
 		// this code make button looks similar to buttons in system.  
 		//Commented it because it appears very slowly
 		// well, we added method repaint();  and it works now perfectly ))  
-		setUndecorated(true);
 		setTitle("Minefront Launcher");
 		setSize(new Dimension(width, height));
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
