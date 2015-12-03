@@ -12,7 +12,6 @@
 <fullyQualifiedTypeName name="java.awt.Cursor"/>
 <fullyQualifiedTypeName name="java.awt.Point"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
-<fullyQualifiedTypeName name="javax.imageio.ImageIO"/>
 <fullyQualifiedTypeName name="java.awt.image.BufferedImage"/>
 <fullyQualifiedTypeName name="com.mime.minefront.input.Controller"/>
 <fullyQualifiedTypeName name="java.applet.Applet"/>
@@ -31,7 +30,6 @@
 <fullyQualifiedTypeName name="java.awt.Dimension"/>
 <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
 <fullyQualifiedTypeName name="java.awt.Choice"/>
-<fullyQualifiedTypeName name="com.mime.minefront.Display"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="com.mime.minefront.Configuration"/>
 <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
@@ -41,4 +39,6 @@
 <fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="java.awt.Font"/>
+<fullyQualifiedTypeName name="com.mime.minefront.Display"/>
+<fullyQualifiedTypeName name="javax.imageio.ImageIO"/>
 </qualifiedTypeNameHistroy>

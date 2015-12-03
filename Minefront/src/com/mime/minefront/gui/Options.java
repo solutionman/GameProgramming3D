@@ -2,11 +2,9 @@ package com.mime.minefront.gui;
 
 import java.awt.Choice;
 import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -29,7 +27,7 @@ public class Options extends Launcher {
 	int h = 0;
 	
 	public Options() {
-		super(1);
+		super(1, new Display());
 		setTitle("Options - Minefront Launcher");
 		setSize(new Dimension(width, height));
 		setLocationRelativeTo(null);
@@ -70,7 +68,7 @@ public class Options extends Launcher {
 		OK.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				new Launcher(0);
+				new Launcher(0, new Display());
 				config.saveConfiguration("width", parseWidth());
 				config.saveConfiguration("height", parseHeight());
 			}
