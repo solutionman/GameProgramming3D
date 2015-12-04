@@ -2,19 +2,17 @@ package com.mime.minefront;
 
 import java.awt.Canvas;
 import java.awt.Color;
-import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.Point;
-import java.awt.Toolkit;
+
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
+import java.io.IOException;
 
-import javax.swing.JFrame;
+import javax.imageio.ImageIO;
 
-import com.mime.minefront.graphics.Render;
 import com.mime.minefront.graphics.Screen;
 import com.mime.minefront.gui.Launcher;
 import com.mime.minefront.input.Controller;
@@ -23,8 +21,7 @@ import com.mime.minefront.input.InputHandler;
 public class Display extends Canvas implements Runnable {
 
 	public static int width = 800;
-	public static int height = 600;
-	
+	public static int height = 600;	
 	public static final String TITLE = "Minefront Pre-Alpha 0.02";
 
 	private Thread thread;
@@ -38,6 +35,7 @@ public class Display extends Canvas implements Runnable {
 	private int oldX = 0;
 	private int fps;
 	public static int selection = 0;
+	Launcher launcher = new Launcher(0, this);
 	
 	public static double MouseSpeed;
 	
@@ -96,13 +94,15 @@ public class Display extends Canvas implements Runnable {
 		double secondsPerTick = 1 / 60.0;
 		int tickCount = 0;
 		boolean ticked = false;
+		requestFocus();
 		
 		while (running) {
 			long currentTime = System.nanoTime();
 			long passedTime = currentTime - previousTime;
 			previousTime = currentTime;
 			unprocessedSeconds += passedTime / 1000000000.0;
-			requestFocus();
+			
+			
 			
 			while (unprocessedSeconds > secondsPerTick) {
 				tick();
@@ -115,13 +115,16 @@ public class Display extends Canvas implements Runnable {
 					previousTime += 1000;
 					frames = 0;
 				}
+				if (ticked) {
+					//render();
+					renderMenu();
+					frames++;
+				}
+				//render();
+				//frames++;
 			}
-			if (ticked) {
-				render();
-				frames++;
-			}
-			render();
-			frames++;
+			
+			
 			
 			newX = InputHandler.MouseX;
 			if (newX > oldX) {
@@ -142,6 +145,29 @@ public class Display extends Canvas implements Runnable {
 	
 	private void tick() {
 		game.tick(input.key);
+	}
+	
+	private void renderMenu() {
+		BufferStrategy bs = this.getBufferStrategy();
+		if (bs == null) {
+			createBufferStrategy(3);
+			return;
+		}				
+		Graphics g = bs.getDrawGraphics();
+		g.setColor(Color.BLACK);
+		g.fillRect(0, 0, 800, 400);
+		
+		try {
+			g.drawImage(ImageIO.read(Display.class.getResource("/menu_image.jpg")), 0, 0, 800, 400, null);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		g.setColor(Color.WHITE);
+		g.setFont(new Font("Verdana", 0, 30));
+		g.drawString("Play", 700, 90);
+		g.dispose();
+		bs.show();
+		
 	}
 	
 	private void render() {
@@ -168,7 +194,8 @@ public class Display extends Canvas implements Runnable {
 	}
 
 	public static void main(String[] args) {
-		new Launcher(0);
+		Display display = new Display();
+		new Launcher(0, display);
 	}
 
 }

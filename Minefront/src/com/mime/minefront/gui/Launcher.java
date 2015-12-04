@@ -14,7 +14,7 @@ import com.mime.minefront.Configuration;
 import com.mime.minefront.Display;
 import com.mime.minefront.RunGame;
 
-public class Launcher extends JFrame {
+public class Launcher extends JFrame implements Runnable {
 	private static final long serialVersionUID = 1L;
 	
 	protected JPanel window = new JPanel();
@@ -26,6 +26,8 @@ public class Launcher extends JFrame {
 	private int height = 400;
 	protected int button_width = 80;
 	protected int button_height = 40;
+	boolean running = false;
+	Thread thread;
 
 	public Launcher(int id, Display display) {
 		try {
@@ -42,15 +44,41 @@ public class Launcher extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		//getContentPane().add(window);
 		add(display);
-		setLocationRelativeTo(null);
+		setLocationRelativeTo(null);		
 		setResizable(false);
 		setVisible(true);
 		window.setLayout(null);
 		if (id == 0) {
 		drawButtons();
 		}
+		startMenu();
 		display.start();
 		repaint();
+	}
+	
+	public void updateFrame() {
+		setLocation(1200, 200);
+	}
+	
+	public void startMenu() {
+		running = true;
+		thread = new Thread(this, "menu");
+		thread.start();
+	}
+	
+	public void stopMenu() {
+		try {
+			thread.join();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void run() {
+		while(running) {
+			updateFrame();
+		}
+		
 	}
 	
 	private void drawButtons() {
@@ -99,6 +127,8 @@ public class Launcher extends JFrame {
 		});
 		
 	}
+
+	
 	
 }
 
